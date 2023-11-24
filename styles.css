@@ -13,9 +13,8 @@
   --white-bg-color: #fff;
   --bg-color: #f1f1f1;
 
-  /* Navbar colors */
+  /* grey colors */
   --grey-50-color: #656266;
-  --grey-100-color: #616161;
   --grey-200-color: #322f33;
   --grey-300-color: #1c181d;
 
@@ -27,7 +26,6 @@
   /* strokes colors */
   --stroke-50-color: #ebebeb;
   --stroke-100-color: #e1e1e1;
-  --stroke-200-color: #616161;
 
   /* states colors */
   --hover-color: #f7f7f7;
@@ -67,6 +65,15 @@ button {
   box-shadow: 0px 0px 0px 1.5px #333;
 }
 
+button:active {
+  transform: translateY(1px);
+}
+
+:focus {
+  outline: 2px solid var(--focused-color);
+  border-radius: 4px;
+}
+
 h3 {
   font-size: 14px;
   color: var(--font-dark-color);
@@ -101,6 +108,11 @@ li:hover {
   background: var(--hover-color);
 }
 
+li.active {
+  border-radius: 8px;
+  background: var(--hover-color);
+}
+
 input {
   width: 100%;
   height: 100%;
@@ -108,6 +120,10 @@ input {
   outline: none;
   border: none;
   background-color: inherit;
+}
+
+input:focus {
+  outline: none;
 }
 
 header {
@@ -123,7 +139,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  background: var(--color-scales-gray-16, #1a1a1a);
+  background: #1a1a1a;
 }
 
 /* ------------- navigation styles-------------------------------- */
@@ -140,8 +156,20 @@ nav {
   align-items: center;
   gap: 6px;
   border-radius: 8px;
-  border: 1px solid var(--stroke-s-200, #616161);
-  background: var(--grey-g-200, #303030);
+  border: 1px solid var(--font-mid-color);
+  background: var(--font-dark-color);
+}
+
+.searchbar:focus-within {
+  border: 2px solid var(--white-bg-color);
+}
+
+.searchbar:focus {
+  border: 2px solid var(--focused-color);
+}
+
+.searchbar:hover {
+  border: 1px solid var(--stroke-100-color);
 }
 
 .settings-notifi {
@@ -160,16 +188,24 @@ nav {
   cursor: pointer;
   border-radius: 8px;
   position: relative;
-  background: var(--grey-grey-200, #303030);
+  background: var(--font-dark-color);
   transition: background 0.3s ease;
 }
 
 .settings-container.active {
-  background: #656266;
+  background: var(--grey-50-color);
 }
 
 .notification-container.active {
-  background: #656266;
+  background: var(--grey-50-color);
+}
+
+.settings-container:hover {
+  background: var(--grey-50-color);
+}
+
+.notification-container:hover {
+  background: var(--grey-50-color);
 }
 
 .settings-container {
@@ -184,7 +220,7 @@ nav {
 }
 
 .seting-p-span > p {
-  color: var(--font-light, #e3e3e3);
+  color: var(--font-light-color);
   font-size: 12px;
   font-weight: 500;
 }
@@ -206,8 +242,8 @@ nav {
 .notification-dropdown {
   position: absolute;
   border-radius: 14px;
-  border: 1px solid var(--stroke-s-50, #dbdbdb);
-  background: var(--White, #fff);
+  border: 1px solid #dbdbdb;
+  background: var(--white-bg-color);
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
   width: 370px;
   z-index: 1;
@@ -255,8 +291,8 @@ nav {
 .setting-dropdown {
   position: absolute;
   border-radius: 14px;
-  border: 1px solid var(--stroke-s-50, #dbdbdb);
-  background: var(--White, #fff);
+  border: 1px solid #dbdbdb;
+  background: var(--white-bg-color);
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
   width: 320px;
   z-index: 1;
@@ -282,7 +318,7 @@ nav {
   justify-content: space-between;
   padding: 4px 12px 4px 4px;
   border-radius: 8px;
-  background: var(--states-hover, #f1f1f1);
+  background: var(--bg-color);
 }
 
 .setting-dropdown-name {
@@ -321,7 +357,7 @@ nav {
 .divider {
   width: 300px;
   height: 0.75px;
-  background: #e1e1e1;
+  background: var(--stroke-100-color);
 }
 
 .username-mail {
@@ -331,7 +367,7 @@ nav {
 }
 
 .username-mail > span {
-  color: var(--grey-grey-100, var(--font-mid-2, #616161));
+  color: var(--font-mid-color);
   font-size: 12px;
   font-weight: 400;
 }
@@ -377,12 +413,12 @@ nav {
   padding-right: 2px;
 }
 
-.select-plan-right > button {
+.select-plan-right > a > button {
   border-radius: 6px;
   color: var(--font-dark-color);
   font-weight: 600;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: var(--White, #fff);
+  background: var(--white-bg-color);
   box-shadow: 0px -1px 0px 0px #b5b5b5 inset;
 }
 
@@ -467,7 +503,6 @@ nav {
   border-radius: 10px;
   cursor: pointer;
   padding: 0 0 8px 0;
-
   transition: all 200ms linear;
 }
 
@@ -480,23 +515,25 @@ nav {
 
 .icon-dashed-circle,
 .icon-checkmark-circle,
-.icon-spinner-circle,
-.svg-icon {
+.icon-spinner-circle {
   width: 30px;
   height: 30px;
-  margin: 4px;
-  transition: all 0.3 ease-in-out;
+  margin: 6px 0px 4px 6px;
   cursor: pointer;
 }
 
-.icon-dashed-circle,
-.icon-spinner-circle {
-  filter: brightness(0.5);
+.icon-dashed-circle:hover circle {
+  stroke-dasharray: 0;
+  transition: stroke-dasharray 0.5s ease;
+}
+
+.icon-checkmark-circle {
+  transition: transform 0.3s ease;
+  transform: rotate(360deg);
 }
 
 .icon-spinner-circle,
-.icon-checkmark-circle,
-.svg-icon {
+.icon-checkmark-circle {
   display: none;
 }
 
@@ -506,15 +543,41 @@ nav {
 
 .icon-spinner-circle {
   display: none;
-  animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
+/* animation for the spinner */
 @keyframes spin {
-  0% {
+  0%,
+  100% {
     transform: rotate(0deg);
   }
-  100% {
+  25% {
     transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-360deg);
+  }
+}
+
+.icon-checkmark-circle.animate-checkmark path {
+  transform-origin: center;
+  animation: checkmarkAnimation 0.5s ease;
+}
+
+/* animation for the checkmark */
+@keyframes checkmarkAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -531,6 +594,10 @@ nav {
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
+}
+
+.learn-more-link:hover {
+  text-decoration: underline;
 }
 
 .item-content {
@@ -566,6 +633,11 @@ nav {
   align-items: center;
   gap: 8px;
   font-size: 12px;
+}
+
+.import-btn:hover {
+  border-radius: 6px;
+  border: 1.5px solid var(--font-mid-color);
 }
 
 .dropdown-item .item-content {

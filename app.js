@@ -39,8 +39,10 @@ function toggleIconState() {
         completedItems++;
         updateProgressBar();
 
+        checkmarkCircleIcons[index].classList.add("animate-checkmark");
+
         // To open the next dropdown item when the previous icon is clicked
-        if (index < dropdownItems.length) {
+        if (index < dropdownItems.length - 1) {
           handleToggleDropdown(dropdownItems[index + 1]);
         }
       }, 800);
@@ -63,7 +65,11 @@ function toggleIconState() {
   }
 }
 
-toggleIconState();
+// toggleIconState();
+
+function handleButtonClick(event) {
+  event.stopPropagation();
+}
 
 // To show only one active dropdown item at a time
 const dropdownItems = document.querySelectorAll(".dropdown-item");
@@ -75,6 +81,8 @@ function handleToggleDropdown(item) {
       dropdownItem.classList.remove("active");
     }
   });
+
+  item.focus();
 }
 
 // To close the select plan container when the close icon is clicked
@@ -121,8 +129,48 @@ function toggleNotificationDropdown() {
 }
 
 // To change the color of the active dropdown
-const setingPSpan = document.querySelector(".seting-p-span");
+const setingPSpan = document.querySelector(".settings-container");
 setingPSpan.addEventListener("click", toggleSettingsDropdown);
 
 const notificationContainer = document.querySelector(".notification-container");
 notificationContainer.addEventListener("click", toggleNotificationDropdown);
+
+// To close the notifi and settings dropdowns when clicking outside the container
+document.addEventListener("click", function (event) {
+  const isClickInsideSettings = document
+    .querySelector(".settings-container")
+    .contains(event.target);
+  const isClickInsideNotification = document
+    .querySelector(".notification-container")
+    .contains(event.target);
+
+  if (!isClickInsideSettings) {
+    document.querySelector(".setting-dropdown").classList.remove("open");
+    document.querySelector(".settings-container").classList.remove("active");
+  }
+
+  if (!isClickInsideNotification) {
+    document.querySelector(".notification-dropdown").classList.remove("open");
+    document
+      .querySelector(".notification-container")
+      .classList.remove("active");
+  }
+});
+
+// for keyboard accessibility
+document.addEventListener("DOMContentLoaded", function () {
+  const clickableElements = document.querySelectorAll(
+    '[role="button"], [tabindex]'
+  );
+
+  clickableElements.forEach(function (element) {
+    element.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        element.click();
+      }
+    });
+  });
+
+  toggleIconState();
+});
