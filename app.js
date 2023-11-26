@@ -28,31 +28,53 @@ function toggleIconState() {
 
   let completedItems = 0; // To initialize the complete item state
 
+  function handleIconClick(index) {
+    dashedCircleIcons[index].style.display = "none";
+    spinnerCircleIcons[index].style.display = "block";
+
+    setTimeout(function () {
+      spinnerCircleIcons[index].style.display = "none";
+      checkmarkCircleIcons[index].style.display = "block";
+      completedItems++;
+      updateProgressBar();
+
+      checkmarkCircleIcons[index].classList.add("animate-checkmark");
+
+      // To open the next dropdown item when the previous icon is clicked
+      if (index < dropdownItems.length - 1) {
+        handleToggleDropdown(dropdownItems[index + 1]);
+      }
+    }, 800);
+  }
+
+  function handleCheckmarkClick(index) {
+    checkmarkCircleIcons[index].style.display = "none";
+    dashedCircleIcons[index].style.display = "block";
+    completedItems--;
+    updateProgressBar();
+  }
+
   dashedCircleIcons.forEach((dashedCircleIcon, index) => {
     dashedCircleIcon.addEventListener("click", function () {
-      dashedCircleIcon.style.display = "none";
-      spinnerCircleIcons[index].style.display = "block";
+      handleIconClick(index);
+    });
 
-      setTimeout(function () {
-        spinnerCircleIcons[index].style.display = "none";
-        checkmarkCircleIcons[index].style.display = "block";
-        completedItems++;
-        updateProgressBar();
-
-        checkmarkCircleIcons[index].classList.add("animate-checkmark");
-
-        // To open the next dropdown item when the previous icon is clicked
-        if (index < dropdownItems.length - 1) {
-          handleToggleDropdown(dropdownItems[index + 1]);
-        }
-      }, 800);
+    dashedCircleIcon.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        handleIconClick(index);
+      }
     });
 
     checkmarkCircleIcons[index].addEventListener("click", function () {
-      checkmarkCircleIcons[index].style.display = "none";
-      dashedCircleIcon.style.display = "block";
-      completedItems--;
-      updateProgressBar();
+      handleCheckmarkClick(index);
+    });
+
+    checkmarkCircleIcons[index].addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        handleCheckmarkClick(index);
+      }
     });
   });
 
@@ -65,7 +87,7 @@ function toggleIconState() {
   }
 }
 
-// toggleIconState();
+toggleIconState();
 
 function handleButtonClick(event) {
   event.stopPropagation();
@@ -169,8 +191,55 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         element.click();
       }
+
+      if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        event.preventDefault();
+        event.stopPropagation();
+        navigateList(event.key);
+      }
     });
   });
 
-  toggleIconState();
+  function navigateList(direction) {
+    const listItems = document.querySelectorAll(
+      ".profile-settings-dropdown li[tabindex]"
+    );
+    const focusedElement = document.activeElement;
+    let index = Array.from(listItems).indexOf(focusedElement);
+
+    if (direction === "ArrowUp" && index > 0) {
+      index -= 1;
+    } else if (direction === "ArrowDown" && index < listItems.length - 1) {
+      index += 1;
+    }
+
+    listItems[index].focus();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownItems = document.querySelectorAll(".dropdown-item[tabindex]");
+
+  dropdownItems.forEach(function (item, index) {
+    item.addEventListener("keydown", function (event) {
+      const key = event.key;
+      const lastIndex = dropdownItems.length - 1;
+
+      if (key === "ArrowUp" || key === "ArrowDown") {
+        event.preventDefault();
+
+        const direction = key === "ArrowUp" ? -1 : 1;
+        let newIndex = index + direction;
+
+        // Ensure the index stays within bounds
+        if (newIndex < 0) {
+          newIndex = lastIndex;
+        } else if (newIndex > lastIndex) {
+          newIndex = 0;
+        }
+
+        dropdownItems[newIndex].focus();
+      }
+    });
+  });
 });

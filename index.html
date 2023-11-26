@@ -152,12 +152,21 @@
             <a href="https://www.shopify.com/pricing" target="_blank">
               <button tabindex="14">Select a plan</button>
             </a>
-            <img
-              src="https://crushingit.tech/hackathon-assets/icon-cross.svg"
-              alt="icon-cross"
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
               class="close-icon"
               tabindex="15"
-            />
+            >
+              <path
+                d="M13.9697 15.0303C14.2626 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2626 15.0303 13.9697L11.0607 10L15.0303 6.03033C15.3232 5.73744 15.3232 5.26256 15.0303 4.96967C14.7374 4.67678 14.2626 4.67678 13.9697 4.96967L10 8.93934L6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L8.93934 10L4.96967 13.9697C4.67678 14.2626 4.67678 14.7374 4.96967 15.0303C5.26256 15.3232 5.73744 15.3232 6.03033 15.0303L10 11.0607L13.9697 15.0303Z"
+                fill="#E3E3E3"
+              />
+            </svg>
           </div>
         </div>
         <!-- -------------------------------->
@@ -197,62 +206,68 @@
                 class="dropdown-item active"
                 tabindex="17"
                 onclick="handleToggleDropdown(this)"
+                role="button"
+                aria-label="Dropdown Item"
               >
                 <header>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="icon-dashed-circle"
-                    tabindex="18"
-                    focusable="true"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="#8A8A8A"
-                      stroke-width="2.08333"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-dasharray="5 5"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="icon-spinner-circle"
-                  >
-                    <path
-                      d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
-                      stroke="#1C181D"
-                      stroke-width="2.08333"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="icon-checkmark-circle"
-                  >
-                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
-                    <path
-                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
-                      fill="#fff"
-                    ></path>
-                  </svg>
+                  <div class="checkbox-bottons">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="icon-dashed-circle"
+                      tabindex="18"
+                      aria-label="Incomplete step"
+                      role="img"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="icon-spinner-circle"
+                    >
+                      <path
+                        d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon-checkmark-circle"
+                      tabindex="18"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
                   <h4>Customize your online store</h4>
                 </header>
-                <div class="item-content">
+                <div class="item-content" onclick="handleButtonClick(event)">
                   <div class="item-content-details">
                     <p>
                       Choose a theme and add your logo, colors, and images to
@@ -266,9 +281,7 @@
                       >
                     </p>
                     <div>
-                      <button onclick="handleButtonClick(event)" tabindex="20">
-                        Customize theme
-                      </button>
+                      <button tabindex="20">Customize theme</button>
                     </div>
                   </div>
                   <img
@@ -285,59 +298,66 @@
                 tabindex="21"
               >
                 <header>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="icon-dashed-circle"
-                    tabindex="22"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="#8A8A8A"
-                      stroke-width="2.08333"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-dasharray="5 5"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="icon-spinner-circle"
-                  >
-                    <path
-                      d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
-                      stroke="#1C181D"
-                      stroke-width="2.08333"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="icon-checkmark-circle"
-                  >
-                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
-                    <path
-                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
-                      fill="#fff"
-                    ></path>
-                  </svg>
+                  <div class="checkbox-bottons">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="icon-dashed-circle"
+                      tabindex="22"
+                      aria-label="Incomplete step"
+                      role="img"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="icon-spinner-circle"
+                    >
+                      <path
+                        d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon-checkmark-circle"
+                      tabindex="22"
+                      aria-label="Step completed successfully"
+                      role="img"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
                   <h4>Add your first product</h4>
                 </header>
-                <div class="item-content">
+                <div class="item-content" onclick="handleButtonClick(event)">
                   <div class="item-content-details">
                     <p>
                       Write a description, add photos, and set pricing for the
@@ -351,16 +371,8 @@
                       >
                     </p>
                     <div class="btns">
-                      <button onclick="handleButtonClick(event)" tabindex="24">
-                        Add product
-                      </button>
-                      <div
-                        class="import-btn"
-                        onclick="handleButtonClick(event)"
-                        tabindex="24"
-                      >
-                        Import product
-                      </div>
+                      <button tabindex="24">Add product</button>
+                      <div class="import-btn" tabindex="24">Import product</div>
                     </div>
                   </div>
                   <img
@@ -377,59 +389,66 @@
                 tabindex="25"
               >
                 <header>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="icon-dashed-circle"
-                    tabindex="26"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="#8A8A8A"
-                      stroke-width="2.08333"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-dasharray="5 5"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="icon-spinner-circle"
-                  >
-                    <path
-                      d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
-                      stroke="#1C181D"
-                      stroke-width="2.08333"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="icon-checkmark-circle"
-                  >
-                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
-                    <path
-                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
-                      fill="#fff"
-                    ></path>
-                  </svg>
+                  <div class="checkbox-bottons">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="icon-dashed-circle"
+                      tabindex="26"
+                      aria-label="Incomplete step"
+                      role="img"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="icon-spinner-circle"
+                    >
+                      <path
+                        d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon-checkmark-circle"
+                      tabindex="26"
+                      aria-label="Step completed successfully"
+                      role="img"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
                   <h4>Add a custom domain</h4>
                 </header>
-                <div class="item-content">
+                <div class="item-content" onclick="handleButtonClick(event)">
                   <div class="item-content-details">
                     <p>
                       Your current domain is 222219.myshopify.com but you can
@@ -444,9 +463,7 @@
                       >
                     </p>
                     <div class="btns">
-                      <button onclick="handleButtonClick(event)" tabindex="28">
-                        Add domain
-                      </button>
+                      <button tabindex="28">Add domain</button>
                     </div>
                   </div>
                   <img
@@ -463,59 +480,66 @@
                 tabindex="29"
               >
                 <header>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="icon-dashed-circle"
-                    tabindex="30"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="#8A8A8A"
-                      stroke-width="2.08333"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-dasharray="5 5"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="icon-spinner-circle"
-                  >
-                    <path
-                      d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
-                      stroke="#1C181D"
-                      stroke-width="2.08333"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="icon-checkmark-circle"
-                  >
-                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
-                    <path
-                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
-                      fill="#fff"
-                    ></path>
-                  </svg>
+                  <div class="checkbox-bottons">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="icon-dashed-circle"
+                      tabindex="30"
+                      aria-label="Incomplete step"
+                      role="img"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="icon-spinner-circle"
+                    >
+                      <path
+                        d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon-checkmark-circle"
+                      tabindex="30"
+                      aria-label="Step completed successfully"
+                      role="img"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
                   <h4>Name your store</h4>
                 </header>
-                <div class="item-content">
+                <div class="item-content" onclick="handleButtonClick(event)">
                   <div class="item-content-details">
                     <p>
                       Your temporary store name is currently Davii collections.
@@ -530,9 +554,7 @@
                       >
                     </p>
                     <div class="btns">
-                      <button onclick="handleButtonClick(event)" tabindex="32">
-                        Name store
-                      </button>
+                      <button tabindex="32">Name store</button>
                     </div>
                   </div>
                   <img
@@ -549,59 +571,66 @@
                 tabindex="33"
               >
                 <header>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="icon-dashed-circle"
-                    tabindex="34"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="#8A8A8A"
-                      stroke-width="2.08333"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-dasharray="5 5"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="icon-spinner-circle"
-                  >
-                    <path
-                      d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
-                      stroke="#1C181D"
-                      stroke-width="2.08333"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="icon-checkmark-circle"
-                  >
-                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
-                    <path
-                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
-                      fill="#fff"
-                    ></path>
-                  </svg>
+                  <div class="checkbox-bottons">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="icon-dashed-circle"
+                      tabindex="34"
+                      aria-label="Incomplete step"
+                      role="img"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#8A8A8A"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="5 5"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="icon-spinner-circle"
+                    >
+                      <path
+                        d="M22.0004 12C22.0004 13.9778 21.4139 15.9112 20.3151 17.5557C19.2162 19.2002 17.6545 20.4819 15.8272 21.2388C13.9999 21.9957 11.9893 22.1937 10.0495 21.8079C8.10965 21.422 6.32782 20.4696 4.9293 19.0711C3.53077 17.6725 2.57837 15.8907 2.19251 13.9509C1.80666 12.0111 2.00469 10.0004 2.76157 8.17317C3.51845 6.3459 4.80017 4.78412 6.44466 3.6853C8.08916 2.58649 10.0226 2 12.0004 2"
+                        stroke="#1C181D"
+                        stroke-width="2.08333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon-checkmark-circle"
+                      tabindex="34"
+                      aria-label="Step completed successfully"
+                      role="img"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
                   <h4>Set up a payment provider</h4>
                 </header>
-                <div class="item-content">
+                <div class="item-content" onclick="handleButtonClick(event)">
                   <div class="item-content-details">
                     <p>
                       Choose a payment provider to start accepting payments.
@@ -616,9 +645,7 @@
                       >
                     </p>
                     <div class="btns">
-                      <button onclick="handleButtonClick(event)">
-                        Set up payment
-                      </button>
+                      <button>Set up payment</button>
                     </div>
                   </div>
                   <img
