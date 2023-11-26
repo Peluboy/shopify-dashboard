@@ -404,6 +404,7 @@ nav {
 .select-plan-container > .extend-trial {
   display: flex;
   align-items: center;
+  padding: 4px;
   justify-content: space-between;
 }
 
