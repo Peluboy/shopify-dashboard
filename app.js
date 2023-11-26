@@ -231,7 +231,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const direction = key === "ArrowUp" ? -1 : 1;
         let newIndex = index + direction;
 
-        // Ensure the index stays within bounds
         if (newIndex < 0) {
           newIndex = lastIndex;
         } else if (newIndex > lastIndex) {

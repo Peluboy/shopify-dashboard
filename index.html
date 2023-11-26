@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopify Dashboard</title>
+    <title>Shopify Admin</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="icon"
@@ -14,7 +14,12 @@
     <div>
       <nav>
         <div class="logo">
-          <a href="https://www.shopify.com" target="_blank" tabindex="1">
+          <a
+            href="https://www.shopify.com"
+            target="_blank"
+            tabindex="1"
+            aria-label="Shopify logo"
+          >
             <img
               src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg"
               alt="shopify-icon-desktop"
@@ -27,7 +32,7 @@
             />
           </a>
         </div>
-        <div class="searchbar">
+        <div class="searchbar" aria-label="Search Bar">
           <img
             src="https://crushingit.tech/hackathon-assets/icon-search.svg"
             alt=""
@@ -35,7 +40,11 @@
           <input type="text" placeholder="Search" tabindex="2" />
         </div>
         <div class="settings-notifi">
-          <div class="notification-container" tabindex="3">
+          <div
+            class="notification-container"
+            tabindex="3"
+            aria-label="Notification"
+          >
             <img
               src="https://crushingit.tech/hackathon-assets/icon-bell.svg"
               alt=""
@@ -59,7 +68,11 @@
               </p>
             </div>
           </div>
-          <div class="settings-container" tabindex="4">
+          <div
+            class="settings-container"
+            tabindex="4"
+            aria-label="Profile settings"
+          >
             <div class="seting-p-span">
               <p>Davii Collections</p>
               <span>DC</span>
@@ -147,12 +160,10 @@
       <div class="main-container">
         <!-- select plan container -->
         <div class="select-plan-container">
-          <h4>Extend your trial for $1/month for 3 months on select plans.</h4>
-          <div class="select-plan-right">
-            <a href="https://www.shopify.com/pricing" target="_blank">
-              <button tabindex="14">Select a plan</button>
-            </a>
-
+          <div class="extend-trial">
+            <h4>
+              Extend your trial for $1/month for 3 months on select plans.
+            </h4>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -161,6 +172,29 @@
               fill="none"
               class="close-icon"
               tabindex="15"
+              aria-label="Close Plan"
+            >
+              <path
+                d="M13.9697 15.0303C14.2626 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2626 15.0303 13.9697L11.0607 10L15.0303 6.03033C15.3232 5.73744 15.3232 5.26256 15.0303 4.96967C14.7374 4.67678 14.2626 4.67678 13.9697 4.96967L10 8.93934L6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L8.93934 10L4.96967 13.9697C4.67678 14.2626 4.67678 14.7374 4.96967 15.0303C5.26256 15.3232 5.73744 15.3232 6.03033 15.0303L10 11.0607L13.9697 15.0303Z"
+                fill="#E3E3E3"
+              />
+            </svg>
+          </div>
+          <div class="select-plan-right">
+            <a href="https://www.shopify.com/pricing" target="_blank">
+              <button tabindex="14" aria-label="Select a Plan">
+                Select a plan
+              </button>
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              class="close-icon"
+              tabindex="15"
+              aria-label="Close Plan"
             >
               <path
                 d="M13.9697 15.0303C14.2626 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2626 15.0303 13.9697L11.0607 10L15.0303 6.03033C15.3232 5.73744 15.3232 5.26256 15.0303 4.96967C14.7374 4.67678 14.2626 4.67678 13.9697 4.96967L10 8.93934L6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L8.93934 10L4.96967 13.9697C4.67678 14.2626 4.67678 14.7374 4.96967 15.0303C5.26256 15.3232 5.73744 15.3232 6.03033 15.0303L10 11.0607L13.9697 15.0303Z"
@@ -645,7 +679,7 @@
                       >
                     </p>
                     <div class="btns">
-                      <button>Set up payment</button>
+                      <button tabindex="36">Set up payment</button>
                     </div>
                   </div>
                   <img
